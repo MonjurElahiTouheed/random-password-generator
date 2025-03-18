@@ -1,19 +1,56 @@
-
-
-
-
 const range = document.getElementById('range');
-const lengthField = document.getElementById('lengthField');
 const plength = document.getElementById('plength');
-plength.innerText = range.value;
+const plusBtn = document.querySelector('.plus__btn');
+const minusBtn = document.querySelector('.minus__btn');
+const password = document.querySelector('.password');
+const upperCase = document.getElementById('upper__case');
+const lowerCase = document.getElementById('lower__case');
+
+plength.value = range.value;
+
+const charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYXZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+{}|[]\/.,><~`'
+let newPassWord = '';
 
 
 
-lengthField.value = range.value;
-range.addEventListener('change', () => {
+console.log(charSet.length);
+
+
+
+
+function generatePass(){
+    const length = range.value;
     
+    for(let i = 0; i<length; i++) {
+        let index = Math.floor(Math.random() * charSet.length);
+        console.log(index);
+        newPassWord += charSet[index];
+    }
     
-    lengthField.value = range.value;
-    plength.innerText = range.value;
-    
+    password.innerText = newPassWord;
+    newPassWord='';
+}
+
+generatePass();
+
+
+range.addEventListener('input', () => {
+    plength.value = range.value;
+    generatePass();
 })
+
+const plus = () => {
+    range.value ++;
+    plength.value = range.value;
+    generatePass();
+}
+const minus = () => {
+    range.value --;
+    plength.value = range.value;
+    generatePass();
+}
+
+function rangeNumber() {
+    range.value = plength.value;
+    generatePass();
+}

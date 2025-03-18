@@ -13,10 +13,16 @@
     <main>
         <div>
             <h1>Random Password Generator</h1>
-            <input type="number" id="lengthField">
-            <p>Password length: <span id="plength"></span> </p>
-            <input type="range" id="range" min="0" max="100" value="10">
-            <button>Generate password</button>
+            <p class="password"></p>
+            <label for="">Password length: </label>
+            <input onchange="rangeNumber()" type="number" id="plength">
+            <button onmousedown="plus()" class="plus__btn">+</button>
+            <input type="range" id="range" min="1" max="100" value="10">
+            <button onmousedown="minus()"  class="minus__btn">-</button>
+            <input type="checkbox" name="" id="upper__case" checked> ABC
+            <input type="checkbox" name="" id="lower__case" checked> abc
+            <input type="checkbox" name="" id="symbol" checked> !@#$
+            <!-- <button onclick="generate()">Generate password</button> -->
         </div>
     </main>
     <script src="script.js"></script>
