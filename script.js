@@ -12,6 +12,7 @@ plength.value = range.value;
 const strongPic = document.querySelector('.strong__pass');
 const mediumPic = document.querySelector('.medium__pass');
 const weakPic = document.querySelector('.weak__pass');
+const passState = document.querySelector('.pass__state');
 
 let charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYXZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+{}|[]\/.,><~`';
 
@@ -95,6 +96,9 @@ function passwordEffect(){
         mediumPic.style.display = 'none';
         weakPic.style.display = 'none';
         password.style.backgroundColor = 'lavenderblush';
+        passState.innerText = 'Strong'
+        passState.style.backgroundColor='red';
+        passState.style.color = 'white';
     }
     else if(password.value.length >= 10){
         password.style.boxShadow = '1px 1px 4px 2px yellow';
@@ -102,6 +106,9 @@ function passwordEffect(){
         mediumPic.style.display = 'block';
         weakPic.style.display = 'none';
         password.style.backgroundColor = '#fffff0';
+        passState.innerText = 'Medium';
+        passState.style.backgroundColor='yellow';
+        passState.style.color = 'black';
     }
     else {
         password.style.boxShadow = '1px 1px 4px 2px lightgreen';
@@ -109,6 +116,9 @@ function passwordEffect(){
         mediumPic.style.display = 'none';
         weakPic.style.display = 'block';
         password.style.backgroundColor = '#f0fffc';
+        passState.innerText = 'Weak';
+        passState.style.backgroundColor='lightgreen';
+        passState.style.color = 'black';
     }
 }
 
@@ -143,5 +153,4 @@ function copy() {
     navigator.clipboard.writeText(password.value);
 }
 
-const passState = document.querySelector('.pass__state');
 

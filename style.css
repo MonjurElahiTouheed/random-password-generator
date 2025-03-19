@@ -20,6 +20,7 @@ main{
 
 .strong__pass,.weak__pass, .medium__pass{
     width: 300px;
+    animation: float 2s infinite ease-in-out;
 }
 .strong__pass, .weak__pass {
     display: none;
@@ -59,4 +60,17 @@ main{
     top: 50%;
     transform: translateY(-50%);
     right: 200px;
+}
+
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
