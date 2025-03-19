@@ -1,12 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
 *{
     box-sizing: border-box;
 }
 body{
-
+    font-family: "Tektur", sans-serif;
+    background-color: #DDD;
 }
 main{
     max-width: 50%;
     margin: auto;
     margin-top: 300px;
     text-align: center;
+}
+
+.pass__wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.strong__pass,.weak__pass, .medium__pass{
+    width: 300px;
+}
+.strong__pass, .weak__pass {
+    display: none;
+}
+.medium__pass {
+    display: block;
+}
+
+.password {
+    padding: 18px 150px 18px 20px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-family: "Tektur", sans-serif;
+    box-shadow: 1px 1px 4px 2px yellow;
+    border: none;
+    background-color:lavenderblush;
+}
+
+#plength {
+    padding: 10px;
+    width: 60px;
+    border-radius: 8px;
+    font-family: "Tektur", sans-serif;
+}
+
+.passWord__fields {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.pass__state {
+    background: red;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 200px;
 }

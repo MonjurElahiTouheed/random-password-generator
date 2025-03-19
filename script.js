@@ -9,6 +9,9 @@ const symbol = document.getElementById('symbol');
 const number = document.getElementById('number');
 const copyBtn = document.getElementById('copy__btn');
 plength.value = range.value;
+const strongPic = document.querySelector('.strong__pass');
+const mediumPic = document.querySelector('.medium__pass');
+const weakPic = document.querySelector('.weak__pass');
 
 let charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYXZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+{}|[]\/.,><~`';
 
@@ -85,30 +88,60 @@ function generatePass(){
 
 generatePass();
 
+function passwordEffect(){
+    if(password.value.length >= 15) {
+        password.style.boxShadow = '1px 1px 4px 2px red';
+        strongPic.style.display = 'block';
+        mediumPic.style.display = 'none';
+        weakPic.style.display = 'none';
+        password.style.backgroundColor = 'lavenderblush';
+    }
+    else if(password.value.length >= 10){
+        password.style.boxShadow = '1px 1px 4px 2px yellow';
+        strongPic.style.display = 'none';
+        mediumPic.style.display = 'block';
+        weakPic.style.display = 'none';
+        password.style.backgroundColor = '#fffff0';
+    }
+    else {
+        password.style.boxShadow = '1px 1px 4px 2px lightgreen';
+        strongPic.style.display = 'none';
+        mediumPic.style.display = 'none';
+        weakPic.style.display = 'block';
+        password.style.backgroundColor = '#f0fffc';
+    }
+}
 
 range.addEventListener('input', () => {
     plength.value = range.value;
     generatePass();
+    
+    passwordEffect()
 })
 
 const plus = () => {
     range.value ++;
     plength.value = range.value;
     generatePass();
+    passwordEffect()
 }
 const minus = () => {
     range.value --;
     plength.value = range.value;
     generatePass();
+    passwordEffect()
 }
 
 function rangeNumber() {
     range.value = plength.value;
     generatePass();
+    passwordEffect()
 }
 
 function copy() {
     password.select();
     navigator.clipboard.writeText(password.value);
-    
 }
+
+const passState = document.querySelector('.pass__state');
+
