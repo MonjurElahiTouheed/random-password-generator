@@ -63,7 +63,7 @@ h1{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 200px;
+    left: 350px;
     background-color: yellow;
 }
 
@@ -79,6 +79,13 @@ input:focus {
     outline: none;
 }
 
+
+label{
+    font-weight: 600;
+}
+.chars{
+    margin-top: 25px;
+}
 
 @keyframes float {
     0% {
