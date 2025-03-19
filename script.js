@@ -99,6 +99,7 @@ function passwordEffect(){
         passState.innerText = 'Strong'
         passState.style.backgroundColor='red';
         passState.style.color = 'white';
+        copyBtn.style.background='red';
     }
     else if(password.value.length >= 10){
         password.style.boxShadow = '1px 1px 4px 2px yellow';
@@ -109,6 +110,7 @@ function passwordEffect(){
         passState.innerText = 'Medium';
         passState.style.backgroundColor='yellow';
         passState.style.color = 'black';
+        copyBtn.style.background='yellow';
     }
     else {
         password.style.boxShadow = '1px 1px 4px 2px lightgreen';
@@ -119,6 +121,7 @@ function passwordEffect(){
         passState.innerText = 'Weak';
         passState.style.backgroundColor='lightgreen';
         passState.style.color = 'black';
+        copyBtn.style.background='lightgreen'
     }
 }
 
